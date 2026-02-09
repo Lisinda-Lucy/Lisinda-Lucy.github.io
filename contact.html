@@ -1,193 +1,128 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact | Lucy Digital</title>
-  <meta name="description" content="Contact Lucy Digital | AI, Marketing & Automation Consultant." />
-  <link rel="icon" href="assets/favicon.ico" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact | Lucy Digital</title>
+<link rel="icon" href="assets/favicon.ico">
 
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: { brand: { DEFAULT:'#0EA5E9', dark:'#0369A1', soft:'#E0F2FE' } },
-          boxShadow: { soft:'0 10px 30px rgba(0,0,0,0.1)' }
-        }
-      }
-    }
-  </script>
+<script src="https://cdn.tailwindcss.com"></script>
 
-  <style>
-    html, body { height: 100%; }
-    body {
-      display: flex;
-      flex-direction: column;
-      background: linear-gradient(180deg,#0F172A 0%,#1E293B 100%);
-      color: #E2E8F0;
-      font-family: system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Ubuntu,'Helvetica Neue',sans-serif;
-    }
-    main { flex: 1; }
-    h1, h2 { color:#F8FAFC }
-    a { color:#E2E8F0 } 
-    a:hover { color:#7DD3FC }
-    .card { background-color:#1E293B; border:1px solid #334155; box-shadow:0 10px 30px rgba(0,0,0,0.1) }
-  </style>
+<style>
+body{
+  background:#1c0f13;
+  color:#fafafa;
+  font-family:Inter, system-ui, sans-serif;
+}
+
+.card{
+  background:#18181c;
+  border:1px solid #2a2a2a;
+  transition:.2s ease;
+}
+
+.card:hover{
+  border-color:#6e7e85;
+}
+
+.subtle{color:#b7cece}
+.muted{color:#bbbabc}
+
+.btn{
+  background:#6e7e85;
+  color:#fff;
+  padding:12px 22px;
+  border-radius:10px;
+  font-weight:500;
+}
+
+.btn:hover{background:#5a676d}
+
+.btn-outline{
+  border:1px solid #2a2a2a;
+  padding:12px 22px;
+  border-radius:10px;
+}
+
+.nav{border-bottom:1px solid #2a2a2a}
+</style>
 </head>
 
-<body class="antialiased">
+<body>
 
-  <!-- Header -->
-  <header class="sticky top-0 z-50 border-b border-slate-700 backdrop-blur bg-slate-900/60">
-  <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-    <!-- Left: Brand Name -->
-    <a href="index.html" class="text-slate-100 text-lg font-semibold tracking-wide hover:text-brand transition">
-      Lucy Digital
-    </a>
+<!-- NAV -->
+<header class="nav sticky top-0 bg-[#1c0f13]/90 backdrop-blur z-50">
+<div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+<a href="index.html" class="font-semibold text-lg">Lucy Digital</a>
 
-    <!-- Desktop nav -->
-    <nav class="hidden md:flex gap-6 text-slate-200 font-medium items-center" aria-label="Primary">
-      <a href="work.html" class="hover:text-brand">Work</a>
-      <a href="services.html" class="hover:text-brand">Services</a>
-      <a href="about.html" class="hover:text-brand">About</a>
-      <a href="contact.html" class="hover:text-brand">Contact</a>
-      <a href="resume.html" class="px-4 py-2 rounded bg-brand text-slate-900 font-medium hover:bg-brand-dark transition">
-        Resumé
-      </a>
-    </nav>
-
-    <!-- Mobile: Hamburger -->
-    <div class="md:hidden flex items-center">
-      <button id="mobileNavBtn"
-              class="inline-flex items-center justify-center p-2 rounded-md text-slate-200 hover:bg-slate-800/50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand"
-              aria-controls="mobileNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation">
-        <!-- Hamburger icon -->
-        <svg id="hamburgerIcon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-        <!-- Close icon (hidden by default) -->
-        <svg id="closeIcon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-        </svg>
-      </button>
-    </div>
-  </div>
-
-  <!-- Mobile menu (hidden on md+) -->
-  <nav id="mobileNav" class="md:hidden hidden border-t border-slate-700 bg-slate-900/95">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-3">
-      <a href="work.html" class="py-2 px-3 rounded hover:bg-slate-800/50 text-slate-100 font-medium">Work</a>
-      <a href="services.html" class="py-2 px-3 rounded hover:bg-slate-800/50 text-slate-100 font-medium">Services</a>
-      <a href="about.html" class="py-2 px-3 rounded hover:bg-slate-800/50 text-slate-100 font-medium">About</a>
-      <a href="contact.html" class="py-2 px-3 rounded hover:bg-slate-800/50 text-slate-100 font-medium">Contact</a>
-      <a href="resume.html" class="mt-2 inline-block px-4 py-2 rounded bg-brand text-slate-900 font-medium hover:bg-brand-dark transition text-center">
-        Resumé
-      </a>
-    </div>
-  </nav>
-
-  <script>
-    (function() {
-      const btn = document.getElementById('mobileNavBtn');
-      const mobileNav = document.getElementById('mobileNav');
-      const hamburger = document.getElementById('hamburgerIcon');
-      const closeIcon = document.getElementById('closeIcon');
-
-      if (!btn || !mobileNav) return;
-
-      function setAria(open) {
-        btn.setAttribute('aria-expanded', String(open));
-      }
-
-      btn.addEventListener('click', function() {
-        const open = mobileNav.classList.toggle('hidden') === false;
-        // Toggle icons
-        hamburger.classList.toggle('hidden', open);
-        closeIcon.classList.toggle('hidden', !open);
-        setAria(open);
-      });
-
-      // Close menu when a mobile link is clicked (nice UX)
-      mobileNav.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => {
-          if (!mobileNav.classList.contains('hidden')) {
-            mobileNav.classList.add('hidden');
-            hamburger.classList.remove('hidden');
-            closeIcon.classList.add('hidden');
-            setAria(false);
-          }
-        });
-      });
-
-      // Optional: close on Escape key
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !mobileNav.classList.contains('hidden')) {
-          mobileNav.classList.add('hidden');
-          hamburger.classList.remove('hidden');
-          closeIcon.classList.add('hidden');
-          setAria(false);
-        }
-      });
-    })();
-  </script>
+<nav class="flex gap-6 text-sm subtle">
+<a href="work.html">Work</a>
+<a href="services.html">Services</a>
+<a href="about.html">About</a>
+<a href="contact.html" class="text-white">Contact</a>
+<a href="resume.html" class="btn">Resumé</a>
+</nav>
+</div>
 </header>
 
-  <!-- Main Content -->
-  <main>
-    <!-- Intro -->
-    <section class="py-16">
-      <div class="max-w-6xl mx-auto px-4">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Contact</h1>
-        <p class="text-slate-300 text-lg max-w-3xl">
-          Let’s collaborate. Whether it’s improving conversions, automating workflows, or scaling visibility,
-          I work with teams and brands to turn insight into measurable results.
-          Reach out for consulting, fractional leadership, or bespoke project work.
-        </p>
-      </div>
-    </section>
+<main class="max-w-6xl mx-auto px-6">
 
-    <!-- Contact Blocks -->
-    <section class="py-0">
-      <div class="max-w-6xl mx-auto px-4">
-        <div class="mt-10 grid md:grid-cols-3 gap-6 text-left">
-          <a href="mailto:info@lucy-digital.com" class="card rounded-2xl p-6 block hover:border-slate-500">
-            <h2 class="text-lg font-semibold">Email</h2>
-            <p class="mt-1 text-slate-300">info@lucy-digital.com</p>
-            <span class="mt-4 inline-block text-sm text-brand">Send an email →</span>
-          </a>
+<!-- INTRO -->
+<section class="py-20 max-w-3xl">
+<h1 class="text-4xl font-bold">Contact</h1>
 
-          <a href="https://www.linkedin.com/in/lucy-digital/" target="_blank" rel="noopener" class="card rounded-2xl p-6 block hover:border-slate-500">
-            <h2 class="text-lg font-semibold">LinkedIn</h2>
-            <p class="mt-1 text-slate-300 break-words">linkedin.com/in/lucy-digital/</p>
-            <span class="mt-4 inline-block text-sm text-brand">Connect on LinkedIn →</span>
-          </a>
+<p class="mt-6 subtle text-lg">
+If you’re looking for structured growth, clearer systems, or performance clarity, we should talk.
+</p>
 
-          <div class="card rounded-2xl p-6">
-            <h2 class="text-lg font-semibold">Location</h2>
-            <p class="mt-1 text-slate-300">Partnering with brands and professionals across the globe.</p>
-          </div>
-        </div>
+<p class="mt-4 subtle">
+I work with teams across SEO, CRO, paid media, and AI-enabled workflows.  
+Most engagements start with a conversation to understand what’s actually blocking progress.
+</p>
+</section>
 
-        <!-- CTA Row -->
-        <div class="mt-12 flex flex-col md:flex-row items-center justify-center gap-3">
-          <a href="mailto:info@lucy-digital.com" class="px-5 py-3 rounded bg-brand text-slate-900 font-medium hover:bg-brand-dark transition">Email me</a>
-          <a href="https://docs.google.com/forms/d/18bz1_11rUkQcGJNJ6jSipnAI1UeCYUvJZ_4mBpp5HOc/edit" target="_blank" rel="noopener" class="px-5 py-3 rounded border border-slate-600 hover:bg-slate-800 transition">Book a quick intro</a>
-        </div>
-      </div>
-    </section>
-  </main>
+<!-- CONTACT CARDS -->
+<section class="pb-16">
+<div class="grid md:grid-cols-3 gap-6">
 
-  <!-- Footer -->
-  <footer class="py-6 border-t border-slate-700 text-center text-slate-400 text-sm mt-auto">
-    © <span id="year"></span> Lucy Digital. All rights reserved.
-  </footer>
+<a href="mailto:info@lucy-digital.com" class="card p-8 rounded-2xl">
+<h3 class="text-lg font-semibold">Email</h3>
+<p class="subtle mt-2">info@lucy-digital.com</p>
+<p class="mt-4 text-sm muted">Best for project enquiries and consulting.</p>
+</a>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<a href="https://www.linkedin.com/in/lucy-digital/" target="_blank" class="card p-8 rounded-2xl">
+<h3 class="text-lg font-semibold">LinkedIn</h3>
+<p class="subtle mt-2">linkedin.com/in/lucy-digital</p>
+<p class="mt-4 text-sm muted">For professional connection and updates.</p>
+</a>
+
+<div class="card p-8 rounded-2xl">
+<h3 class="text-lg font-semibold">Location</h3>
+<p class="subtle mt-2">Working globally with distributed teams.</p>
+<p class="mt-4 text-sm muted">UK, EU, US, and remote-first companies.</p>
+</div>
+
+</div>
+
+<!-- CTA -->
+<div class="mt-12 flex flex-wrap gap-4">
+<a href="mailto:info@lucy-digital.com" class="btn">Email me</a>
+
+<a href="https://docs.google.com/forms/d/18bz1_11rUkQcGJNJ6jSipnAI1UeCYUvJZ_4mBpp5HOc/edit"
+target="_blank"
+class="btn-outline">
+Book intro call
+</a>
+</div>
+
+</section>
+
+</main>
+
+<footer class="border-t border-[#2a2a2a] py-8 text-center muted text-sm">
+© Lucy Digital
+</footer>
+
 </body>
 </html>
